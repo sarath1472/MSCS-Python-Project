@@ -3,7 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load the data
+# Load the data from Dataset
+
 train = pd.read_excel("Downloads/Dataset.xlsx", sheet_name="train")
 test = pd.read_excel("Downloads/Dataset.xlsx", sheet_name="test")
 ideal = pd.read_excel("Downloads/Dataset.xlsx", sheet_name="ideal")
@@ -58,6 +59,7 @@ for i in range(len(test)):
 test["Deviation"] = deviation
 test["Ideal Index"] = ideal_index
 
+
 # Data Visualization
 
 # Task-1 Visualization
@@ -70,6 +72,7 @@ plt.xticks(rotation=45)
 plt.show()
 
 # Task-2 Visualization
+
 plt.figure(figsize=(10, 6))
 for i in range(0, len(task1)):
     plt.plot(test["x"], test[f"y{str(task1.iloc[i, 0])}"], label=f"y{str(task1.iloc[i, 0])} (Merged)", marker='o')
